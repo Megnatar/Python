@@ -1,0 +1,82 @@
+import requests
+import os
+
+url = 'https://chaturbate.com/'  # 'https://httpbin.org/get'
+
+
+
+# ploads = {'marrygrayes': ""}
+# r = requests.get(url, ploads)
+
+r = requests.get(url)
+#h = requests.get(url)
+print(r.cookies)
+
+if os.path.exists("RequestText.html"):
+  os.remove("RequestText.html")
+
+f = open("RequestText.html", "w")     # To filter username from the date use regex: (?<=stopStreaming\(')(\w*)
+f.write(r.text)
+f.close()
+
+
+# print(r.cookies)
+
+if os.path.exists("Requestcookies.txt"):
+  os.remove("Requestcookies.txt")
+
+f = open("Requestcookies.txt", "w")
+f.write(r.cookies)
+f.close()
+
+r.close()
+
+"""
+______________________________________________________________________________________________________________________________________
+
+url = 'https://chaturbate.com/'
+r = requests.get(url)
+
+Method 	                        Description
+
+delete(url, args) 	            Sends a DELETE request to the specified url
+get(url, params, args) 	        Sends a GET request to the specified url
+head(url, args) 	              Sends a HEAD request to the specified url
+patch(url, data, args) 	        Sends a PATCH request to the specified url
+post(url, data, json, args) 	  Sends a POST request to the specified url
+put(url, data, args) 	          Sends a PUT request to the specified url
+request(method, url, args) 	    Sends a request of the specified method to the specified url
+______________________________________________________________________________________________________________________________________
+
+url = 'https://chaturbate.com/'
+r = requests.get(url)
+
+print(r.cookies)
+
+RESPONSE PARAMETERS
+
+apparent_encoding 	     	Returns the apparent encoding
+close() 	             	  Closes the connection to the server
+content 	             	  Returns the content of the response, in bytes
+cookies 	             	  Returns a CookieJar object with the cookies sent back from the server
+elapsed 	             	  Returns a timedelta object with the time elapsed from sending the request to the arrival of the response
+encoding 	             	  Returns the encoding used to decode r.text
+headers 	             	  Returns a dictionary of response headers
+history 	             	  Returns a list of response objects holding the history of request (url)
+is_permanent_redirect 	 	Returns True if the response is the permanent redirected url, otherwise False
+is_redirect 	         	  Returns True if the response was redirected, otherwise False
+iter_content() 	         	Iterates over the response
+iter_lines() 	         	  Iterates over the lines of the response
+json() 	                 	Returns a JSON object of the result (if the result was written in JSON format, if not it raises an error)
+links 	                 	Returns the header links
+next 	                 	  Returns a PreparedRequest object for the next request in a redirection
+ok 	                     	Returns True if status_code is less than 200, otherwise False
+raise_for_status() 	     	If an error occur, this method returns a HTTPError object
+reason 	                 	Returns a text corresponding to the status code
+request 	             	  Returns the request object that requested this response
+status_code 	         	  Returns a number that indicates the status (200 is OK, 404 is Not Found)
+text 	                 	  Returns the content of the response, in unicode
+url 	                 	  Returns the URL of the response
+______________________________________________________________________________________________________________________________________
+
+"""
