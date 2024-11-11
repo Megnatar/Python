@@ -24,7 +24,7 @@ def get_users(url, pages):
     while page < pages:
         page += 1
         with requests.get(url, params={'page': page}) as r:
-            [usr for usr in online_users.union((User_Filter.findall(r.text))) if usr not in online_users and not online_users.add('https://chaturbate.com/' + usr)]
+            [usr for usr in online_users.union((User_Filter.findall(r.text))) if usr not in online_users and not online_users.add('https://SomeSite.com/' + usr)]
             r.close()
         sleep(round(uniform(1.0, 2.0), 4))
     return list(online_users)
@@ -127,7 +127,7 @@ tags_url = []
 save_dir = '/home/jos/Videos/PlayList'
 tags_name_filter = re.compile(r'(?<=data-floatingnav>#)\w*')
 tags_Filter = re.compile(r'((?<=tag/)\w*)')
-root_urls = ['https://chaturbate.com/', 'https://chaturbate.com/tag/', 'https://chaturbate.com/tags/f/']
+root_urls = ['https://SomeSite.com/', 'https://SomeSite.com/tag/', 'https://SomeSite.com/tags/f/']
 url = [root_urls[0]]
 
 # get a collection of all the taggs. Store the url for each tag in list tags_url.
