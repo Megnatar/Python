@@ -135,7 +135,7 @@ with requests.get(root_urls[2]) as r:
     for tag in tags_name_filter.findall(str(r.content, 'UTF-8')):
         tags_url.append(root_urls[1] + tag + '/f/')
 
-tags_get = ["nasty"]  # tags_get = ["squirt", "lesbian", "nasty"] # tags_get = ["lesbian", "nasty", "fetish", "hairypussy", "bbw", "squirt", "dildo", "fuckmachine"]
+tags_get = ["nasty"]  # tags_get = ["A", "B", "C"]
 
 # Itirate through all urls in tags_url.
 for page_link in tags_url:
