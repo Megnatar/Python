@@ -2,7 +2,7 @@
 """
 ______________________________________________________________________________________________________________________________________
 
-url = 'https://chaturbate.com/'
+url = 'https://SomeSite.com/'
 r = requests.get(url)
 
 Method 	                        Description
@@ -16,7 +16,7 @@ put(url, data, args) 	          Sends a PUT request to the specified url
 request(method, url, args) 	    Sends a request of the specified method to the specified url
 ______________________________________________________________________________________________________________________________________
 
-url = 'https://chaturbate.com/'
+url = 'https://SomeSite.com/'
 r = requests.get(url)
 
 print(r.cookies)
