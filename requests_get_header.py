@@ -2,7 +2,7 @@ import requests
 import os
 
 url = 'https://w3schools.com/python/demopage.asp'
-gurl = 'https://chaturbate.com/marrygrayes/'
+gurl = 'https://SomeUrl.com/
 #use the 'headers' parameter to set the HTTP headers:
 x = requests.get(gurl, headers = {"HTTP_HOST": "SomeHost"})
 
